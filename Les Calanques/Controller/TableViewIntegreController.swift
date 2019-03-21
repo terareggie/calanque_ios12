@@ -13,6 +13,7 @@ class TableViewIntegreController: UITableViewController
 {
     
     var calanques: [Calanque] = []
+    var cellId = "CalanqueCell"
 
     override func viewDidLoad()
     
@@ -20,6 +21,12 @@ class TableViewIntegreController: UITableViewController
             super.viewDidLoad()
             
             calanques = CalanqueCollection().all()
+            
+            tableView.backgroundColor = UIColor.clear
+            let bg = UIImageView(frame: view.bounds)
+            bg.image = calanques[0].image
+            bg.contentMode = .scaleAspectFill
+            tableView.backgroundView = bg
         }
 
     // MARK: - Table view data source
@@ -42,18 +49,34 @@ class TableViewIntegreController: UITableViewController
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     
     {
-        //dequeueReusableCell -> C'est ce qui permet de mettre en mémoire une partie de la liste pour le scroll
-        //                       lorsqu'il y a trop d'items et de supprimer ce qui n'est plus visible
-        //withIdentifier -> c'est le nom de l'Identifier du cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier",
-                                                 for: indexPath)
-
-        let calanque = calanques[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: cellId,
+                                                    for: indexPath) as? CalanqueCell
         
-        cell.textLabel?.text = calanque.nom
-        cell.imageView?.image = calanque.image
+        {
+            cell.setupCell(calanques[indexPath.row])
+            
+            return cell
+        }
+        
+        else
+            
+        {
+            //dequeueReusableCell -> C'est ce qui permet de mettre en mémoire une partie de la liste pour le scroll
+            //                       lorsqu'il y a trop d'items et de supprimer ce qui n'est plus visible
+            //withIdentifier -> c'est le nom de l'Identifier du cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier",
+                                                     for: indexPath)
+            
+            let calanque = calanques[indexPath.row]
+            
+            cell.textLabel?.text = calanque.nom
+            cell.imageView?.image = calanque.image
+            
+            return cell
+        }
+        
     
-        return cell
+        
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
