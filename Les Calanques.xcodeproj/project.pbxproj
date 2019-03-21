@@ -13,6 +13,9 @@
 		0227D0C62243E4A600F5BEDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0227D0C42243E4A600F5BEDE /* Main.storyboard */; };
 		0227D0C82243E4B100F5BEDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0227D0C72243E4B100F5BEDE /* Assets.xcassets */; };
 		0227D0CB2243E4B100F5BEDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0227D0C92243E4B100F5BEDE /* LaunchScreen.storyboard */; };
+		0227D0D62243F39800F5BEDE /* Calanques.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227D0D52243F39800F5BEDE /* Calanques.swift */; };
+		0227D0D82243F5EC00F5BEDE /* CalanqueCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227D0D72243F5EC00F5BEDE /* CalanqueCollection.swift */; };
+		0227D0DE2243FE0200F5BEDE /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227D0DD2243FE0200F5BEDE /* Class.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		0227D0C72243E4B100F5BEDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0227D0CA2243E4B100F5BEDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0227D0CC2243E4B100F5BEDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0227D0D52243F39800F5BEDE /* Calanques.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calanques.swift; sourceTree = "<group>"; };
+		0227D0D72243F5EC00F5BEDE /* CalanqueCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalanqueCollection.swift; sourceTree = "<group>"; };
+		0227D0DD2243FE0200F5BEDE /* Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +46,8 @@
 		0227D0B22243E4A600F5BEDE = {
 			isa = PBXGroup;
 			children = (
+				0227D0DA2243FDC000F5BEDE /* Demos */,
+				0227D0D92243FA5800F5BEDE /* DygitarLibrary */,
 				0227D0BD2243E4A600F5BEDE /* Les Calanques */,
 				0227D0BC2243E4A600F5BEDE /* Products */,
 			);
@@ -71,6 +79,8 @@
 		0227D0D22243F21E00F5BEDE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0227D0D52243F39800F5BEDE /* Calanques.swift */,
+				0227D0D72243F5EC00F5BEDE /* CalanqueCollection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -89,6 +99,21 @@
 				0227D0C22243E4A600F5BEDE /* SecondViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		0227D0D92243FA5800F5BEDE /* DygitarLibrary */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DygitarLibrary;
+			sourceTree = "<group>";
+		};
+		0227D0DA2243FDC000F5BEDE /* Demos */ = {
+			isa = PBXGroup;
+			children = (
+				0227D0DD2243FE0200F5BEDE /* Class.swift */,
+			);
+			path = Demos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,9 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0227D0DE2243FE0200F5BEDE /* Class.swift in Sources */,
 				0227D0C32243E4A600F5BEDE /* SecondViewController.swift in Sources */,
 				0227D0BF2243E4A600F5BEDE /* AppDelegate.swift in Sources */,
+				0227D0D82243F5EC00F5BEDE /* CalanqueCollection.swift in Sources */,
 				0227D0C12243E4A600F5BEDE /* FirstViewController.swift in Sources */,
+				0227D0D62243F39800F5BEDE /* Calanques.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
