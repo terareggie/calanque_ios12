@@ -8,39 +8,60 @@
 
 import UIKit
 
-class TableViewIntegreController: UITableViewController {
+class TableViewIntegreController: UITableViewController
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+{
+    
+    var calanques: [Calanque] = []
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
+    override func viewDidLoad()
+    
+        {
+            super.viewDidLoad()
+            
+            calanques = CalanqueCollection().all()
+        }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    override func numberOfSections(in tableView: UITableView) -> Int
+    
+    {
+        
+        return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    
+    {
+        
+        return calanques.count
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    
+    {
+        //dequeueReusableCell -> C'est ce qui permet de mettre en mémoire une partie de la liste pour le scroll
+        //                       lorsqu'il y a trop d'items et de supprimer ce qui n'est plus visible
+        //withIdentifier -> c'est le nom de l'Identifier du cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier",
+                                                 for: indexPath)
 
-        // Configure the cell...
-
+        let calanque = calanques[indexPath.row]
+        
+        cell.textLabel?.text = calanque.nom
+        cell.imageView?.image = calanque.image
+    
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    
+    {
+        return 150
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
