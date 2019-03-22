@@ -22,6 +22,7 @@
 		0227D0EA2244599500F5BEDE /* CalanqueCellAlternative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227D0E92244599500F5BEDE /* CalanqueCellAlternative.swift */; };
 		0227D0EC22446F5400F5BEDE /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227D0EB22446F5400F5BEDE /* DetailController.swift */; };
 		0227D0EE2244867300F5BEDE /* BoutonArrondi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227D0ED2244867300F5BEDE /* BoutonArrondi.swift */; };
+		02AB598D224506F400DE0F49 /* MonAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB598C224506F400DE0F49 /* MonAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		0227D0E92244599500F5BEDE /* CalanqueCellAlternative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalanqueCellAlternative.swift; sourceTree = "<group>"; };
 		0227D0EB22446F5400F5BEDE /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		0227D0ED2244867300F5BEDE /* BoutonArrondi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutonArrondi.swift; sourceTree = "<group>"; };
+		02AB598C224506F400DE0F49 /* MonAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				0227D0D52243F39800F5BEDE /* Calanques.swift */,
 				0227D0D72243F5EC00F5BEDE /* CalanqueCollection.swift */,
+				02AB598C224506F400DE0F49 /* MonAnnotation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				0227D0EE2244867300F5BEDE /* BoutonArrondi.swift in Sources */,
 				0227D0E82244402700F5BEDE /* ImageRonde.swift in Sources */,
 				0227D0D62243F39800F5BEDE /* Calanques.swift in Sources */,
+				02AB598D224506F400DE0F49 /* MonAnnotation.swift in Sources */,
 				0227D0E622442F2400F5BEDE /* CalanqueCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

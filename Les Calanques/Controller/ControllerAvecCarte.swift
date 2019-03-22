@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ControllerAvecCarte: UIViewController {
+class ControllerAvecCarte: UIViewController, MKMapViewDelegate {
     
     var calanques: [Calanque] = CalanqueCollection().all()
 
@@ -17,7 +17,8 @@ class ControllerAvecCarte: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+mapView.delegate = self
+        
         addAnnotations()
     }
     
@@ -28,14 +29,57 @@ class ControllerAvecCarte: UIViewController {
         for calanque in calanques
         
         {
+            //Annotation de base
+            /*
             let annotation = MKPointAnnotation()
             annotation.coordinate = calanque.coordonnee
             annotation.title = calanque.nom
             mapView.addAnnotation(annotation)
+ */
+            
+            //Annotation Custom
+            let annotation = MonAnnotation(calanque)
+            mapView.addAnnotation(annotation)
         }
     }
     
-    
+    //Delegate
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let reuseIdentifier = "reuseID"
+        
+        //Vérifier que ce ne soit pas la position de l'utilisateur
+        if annotation.isKind(of: MKUserLocation.self)
+        
+        {
+            return nil
+        }
+        
+        if let anno = annotation as? MonAnnotation
+        
+        {
+            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
+            
+            if annotationView == nil
+            
+            {
+                annotationView = MKAnnotationView(annotation: anno, reuseIdentifier: reuseIdentifier)
+                
+                annotationView?.image = UIImage(named: "placeholder")
+                //permet de montrer une petite bulle lorsque l'on clique dessus
+                annotationView?.canShowCallout = true
+                
+                return annotationView
+            }
+            
+            else
+            
+            {
+                return annotationView
+            }
+        }
+        
+        return nil
+    }
     
     @IBAction func getPosition(_ sender: Any) {
     }
