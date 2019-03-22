@@ -268,7 +268,13 @@
                             <outlet property="delegate" destination="tzh-ir-HUM" id="5bz-bC-Vq9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="doC-hw-wxR"/>
+                    <navigationItem key="navigationItem" id="doC-hw-wxR">
+                        <barButtonItem key="rightBarButtonItem" title="Reload" id="DYJ-U7-Y4o">
+                            <connections>
+                                <action selector="reloadAction:" destination="tzh-ir-HUM" id="UFN-OK-8vp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="com-bv-xgm" kind="show" identifier="Detail" id="e7z-CL-0Py"/>
                     </connections>
