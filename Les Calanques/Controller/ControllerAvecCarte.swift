@@ -11,13 +11,26 @@ import MapKit
 
 class ControllerAvecCarte: UIViewController {
     
-    
+    var calanques: [Calanque] = CalanqueCollection().all()
 
     @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        addAnnotations()
+    }
+    
+    func addAnnotations()
+    
+    {
+        for calanque in calanques
         
+        {
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = calanque.coordonnee
+            annotation.title = calanque.nom
+            mapView.addAnnotation(annotation)
+        }
     }
     
     
