@@ -19,6 +19,8 @@
 		0227D0E4224403DD00F5BEDE /* TableViewIntegreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227D0E3224403DD00F5BEDE /* TableViewIntegreController.swift */; };
 		0227D0E622442F2400F5BEDE /* CalanqueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227D0E522442F2400F5BEDE /* CalanqueCell.swift */; };
 		0227D0E82244402700F5BEDE /* ImageRonde.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227D0E72244402700F5BEDE /* ImageRonde.swift */; };
+		0227D0EA2244599500F5BEDE /* CalanqueCellAlternative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227D0E92244599500F5BEDE /* CalanqueCellAlternative.swift */; };
+		0227D0EC22446F5400F5BEDE /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0227D0EB22446F5400F5BEDE /* DetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		0227D0E3224403DD00F5BEDE /* TableViewIntegreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewIntegreController.swift; sourceTree = "<group>"; };
 		0227D0E522442F2400F5BEDE /* CalanqueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalanqueCell.swift; sourceTree = "<group>"; };
 		0227D0E72244402700F5BEDE /* ImageRonde.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRonde.swift; sourceTree = "<group>"; };
+		0227D0E92244599500F5BEDE /* CalanqueCellAlternative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalanqueCellAlternative.swift; sourceTree = "<group>"; };
+		0227D0EB22446F5400F5BEDE /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				0227D0E522442F2400F5BEDE /* CalanqueCell.swift */,
+				0227D0E92244599500F5BEDE /* CalanqueCellAlternative.swift */,
 				0227D0E72244402700F5BEDE /* ImageRonde.swift */,
 			);
 			path = View;
@@ -106,6 +111,7 @@
 				0227D0DF2244035300F5BEDE /* ControllerAvecTableView.swift */,
 				0227D0E12244038000F5BEDE /* ControllerAvecCarte.swift */,
 				0227D0E3224403DD00F5BEDE /* TableViewIntegreController.swift */,
+				0227D0EB22446F5400F5BEDE /* DetailController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -197,6 +203,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0227D0DE2243FE0200F5BEDE /* Class.swift in Sources */,
+				0227D0EA2244599500F5BEDE /* CalanqueCellAlternative.swift in Sources */,
+				0227D0EC22446F5400F5BEDE /* DetailController.swift in Sources */,
 				0227D0E4224403DD00F5BEDE /* TableViewIntegreController.swift in Sources */,
 				0227D0E02244035300F5BEDE /* ControllerAvecTableView.swift in Sources */,
 				0227D0BF2243E4A600F5BEDE /* AppDelegate.swift in Sources */,
