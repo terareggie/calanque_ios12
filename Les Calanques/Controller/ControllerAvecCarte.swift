@@ -22,6 +22,27 @@ mapView.delegate = self
         addAnnotations()
         
         NotificationCenter.default.addObserver(self, selector: #selector(notifDetail), name: Notification.Name("detail"), object: nil)
+        
+        
+        if calanques.count > 0
+        
+        {
+            let premiere = calanques[0].coordonnee
+            
+            setupMap(coordonnees: premiere)
+        }
+    }
+    
+    func setupMap(coordonnees: CLLocationCoordinate2D)
+    
+    {
+        //plus la valeur est grande plus on sera éloigné
+        let span = MKCoordinateSpan(latitudeDelta: 0.35, longitudeDelta: 0.35)
+        
+        //on sera centré par rapport à la carte
+        let region = MKCoordinateRegion(center: coordonnees, span: span)
+        
+        mapView.setRegion(region, animated: true)
     }
     
     @objc func notifDetail(notification: Notification)
