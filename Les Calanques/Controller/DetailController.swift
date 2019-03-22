@@ -28,7 +28,7 @@ class DetailController: UIViewController
         
         ivCalanque.image = calanque.image
         
-        let mutable = NSMutableAttributedString(string: calanque.nom + "\n",
+        let mutable = NSMutableAttributedString(string: calanque.nom + "\n\n",
                                                 attributes: [.foregroundColor: UIColor.red,
                                                              .font: UIFont.boldSystemFont(ofSize: 20)])
         
@@ -37,7 +37,7 @@ class DetailController: UIViewController
                                                        .foregroundColor: UIColor.darkGray]))
         
         txtvDesc.attributedText = mutable
-        
+        txtvDesc.textAlignment = .center
         
 
         // Do any additional setup after loading the view.

@@ -56,6 +56,22 @@ class ControllerAvecTableView: UIViewController,
         return 200
     }
     
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: SEGUE_ID, sender: calanques[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SEGUE_ID, let vc = segue.destination as? DetailController
+                
+            {
+                vc.calanqueRecue = sender as? Calanque
+            }
+        
+    }
+    
 
     /*
     // MARK: - Navigation
