@@ -62,11 +62,11 @@ mapView.delegate = self
             if annotationView == nil
             
             {
-                annotationView = MKAnnotationView(annotation: anno, reuseIdentifier: reuseIdentifier)
+                annotationView = MonAnnotationView(annotation: anno, reuseIdentifier: reuseIdentifier)
                 
-                annotationView?.image = UIImage(named: "placeholder")
-                //permet de montrer une petite bulle lorsque l'on clique dessus
-                annotationView?.canShowCallout = true
+                //annotationView?.image = UIImage(named: "placeholder")
+                /////////permet de montrer une petite bulle lorsque l'on clique dessus
+                //annotationView?.canShowCallout = true
                 
                 return annotationView
             }
