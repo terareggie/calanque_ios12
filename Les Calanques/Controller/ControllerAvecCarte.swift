@@ -20,6 +20,36 @@ class ControllerAvecCarte: UIViewController, MKMapViewDelegate {
 mapView.delegate = self
         
         addAnnotations()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(notifDetail), name: Notification.Name("detail"), object: nil)
+    }
+    
+    @objc func notifDetail(notification: Notification)
+    
+    {
+        if let calanque = notification.object as? Calanque
+        
+        {
+            print("j'ai une calanque")
+            toDetail(calanque: calanque)
+        }
+    }
+    
+    
+    //permettra à une autre classe d'acceder au segue de celle ci
+    func toDetail(calanque: Calanque)
+    
+    {
+        performSegue(withIdentifier: "Detail", sender: calanque)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Detail", let controller = segue.destination as? DetailController
+            
+        {
+            controller.calanqueRecue = sender as? Calanque
+        }
+        
     }
     
     //Mettre les annotations
@@ -62,7 +92,12 @@ mapView.delegate = self
             if annotationView == nil
             
             {
-                annotationView = MonAnnotationView(annotation: anno, reuseIdentifier: reuseIdentifier)
+                //Override
+                //annotationView = MonAnnotationView(annotation: anno, reuseIdentifier: reuseIdentifier)
+                
+                annotationView = MonAnnotationView(controller:self,
+                                                   annotation: anno,
+                                                   reuseIdentifier: reuseIdentifier)
                 
                 //annotationView?.image = UIImage(named: "placeholder")
                 /////////permet de montrer une petite bulle lorsque l'on clique dessus

@@ -11,6 +11,16 @@ import MapKit
 
 class MonAnnotationView: MKAnnotationView {
 
+    var controller: ControllerAvecCarte?
+    //permettra d'acceder au segue
+    init(controller: ControllerAvecCarte, annotation: MKAnnotation?, reuseIdentifier: String?) {
+        self.controller = controller
+        
+        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        
+        setupAnnotation()
+    }
+    
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         
@@ -90,7 +100,11 @@ class MonAnnotationView: MKAnnotationView {
     @objc func detail()
     
     {
-    
+        guard let anno = annotation as? MonAnnotation else {return}
+    //controller?.toDetail(calanque: anno.calanque)
+        
+        //envoyer des notifications d'une classe à une autre
+        NotificationCenter.default.post(name: Notification.Name("detail"), object: anno.calanque)
     }
     
     //puisque c'est un selector il faut ajouter @objc

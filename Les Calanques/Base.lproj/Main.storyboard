@@ -307,7 +307,7 @@
                     <navigationItem key="navigationItem" id="21T-q5-Ih6">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Ep9-ny-9t0">
-                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="30"/>
+                            <rect key="frame" x="81.5" y="7" width="212" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Standard"/>
@@ -326,6 +326,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="edC-6J-z0h" id="VUG-74-0ja"/>
+                        <segue destination="com-bv-xgm" kind="show" identifier="Detail" id="zBf-hQ-5NJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -504,6 +505,6 @@
         <image name="sugiton" width="1600" height="896"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="F8M-XB-anf"/>
+        <segue reference="zBf-hQ-5NJ"/>
     </inferredMetricsTieBreakers>
 </document>
