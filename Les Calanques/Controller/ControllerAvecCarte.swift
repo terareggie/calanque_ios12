@@ -9,15 +9,35 @@
 import UIKit
 import MapKit
 
-class ControllerAvecCarte: UIViewController, MKMapViewDelegate {
+class ControllerAvecCarte: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
-    var calanques: [Calanque] = CalanqueCollection().all()
+    
 
     @IBOutlet weak var mapView: MKMapView!
+    
+    var locationManager = CLLocationManager()
+    var userPosition: CLLocation?
+    
+    var calanques: [Calanque] = CalanqueCollection().all()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
 mapView.delegate = self
+        //montrer la position de l'utilisateur
+        mapView.showsUserLocation = true
+        
+        locationManager.delegate = self
+        
+        //toujours demander l'autorisation
+        locationManager.requestAlwaysAuthorization()
+        //demander si on peut localiser notre utilisateur
+        locationManager.startUpdatingLocation()//appelera le delegate
+        //**** ENSUITE IL FAUT ALLER DANS LE INFO.PLIST
+        //AJOUTER Privacy - Location Always and When In Use Usage
+        //DANS LE STRING METTRE CE QUE L'ON VEUT QUI APPARRAISE À L'UTILISATEUR
+        //AJOUTER Privacy - Location When In Use Usage Description
+        //DANS LE STRING METTRE CE QUE L'ON VEUT QUI APPARRAISE À L'UTILISATEUR
         
         addAnnotations()
         
@@ -30,6 +50,19 @@ mapView.delegate = self
             let premiere = calanques[0].coordonnee
             
             setupMap(coordonnees: premiere)
+        }
+    }
+    
+    //CLLocationManagerDelegate
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if locations.count > 0
+        
+        {
+            if let maPosition = locations.last
+            
+            {
+                userPosition = maPosition
+            }
         }
     }
     
@@ -138,6 +171,11 @@ mapView.delegate = self
     }
     
     @IBAction func getPosition(_ sender: Any) {
+        
+        if userPosition != nil
+        {
+            setupMap(coordonnees: userPosition!.coordinate)
+        }
     }
     
     
