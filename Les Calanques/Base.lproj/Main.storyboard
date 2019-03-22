@@ -294,34 +294,30 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="edC-6J-z0h">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </mapView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ep9-ny-9t0">
-                                <rect key="frame" x="20" y="74" width="335" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="27" id="8Jp-zb-3jE"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                    <segment title=""/>
-                                </segments>
-                                <connections>
-                                    <action selector="segmentedChanged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="7cI-bt-DRU"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Ep9-ny-9t0" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="20" id="3rM-4S-bLd"/>
                             <constraint firstItem="edC-6J-z0h" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="FVw-Cy-T6Q"/>
-                            <constraint firstItem="Ep9-ny-9t0" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="10" id="Fny-77-brd"/>
                             <constraint firstItem="edC-6J-z0h" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" id="IlW-l0-gZC"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="Ep9-ny-9t0" secondAttribute="trailing" constant="20" id="NgY-FH-kL9"/>
                             <constraint firstItem="edC-6J-z0h" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="sFJ-TT-1ba"/>
                             <constraint firstItem="edC-6J-z0h" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="utG-g4-qLi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <navigationItem key="navigationItem" id="21T-q5-Ih6">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="Ep9-ny-9t0">
+                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Standard"/>
+                                <segment title="Satellite"/>
+                                <segment title="Hybride"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentedChanged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="7cI-bt-DRU"/>
+                            </connections>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="placeholder" id="dbe-Tb-oQ9">
                             <connections>
                                 <action selector="getPosition:" destination="8rJ-Kc-sve" id="oWO-tS-hWN"/>
