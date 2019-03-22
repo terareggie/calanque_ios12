@@ -42,6 +42,10 @@ class MonAnnotationView: MKAnnotationView {
         
         button.setImage(UIImage(named: "distance"), for: .normal)
         
+        //Ajouter une action au bouton
+        //il faudra ajouter une fonction gps comme ceci puisque c'est un selector (@objc func gps())
+        button.addTarget(self, action: #selector(gps), for: .touchUpInside)
+        
         return button
     }
     
@@ -52,18 +56,47 @@ class MonAnnotationView: MKAnnotationView {
         
         button.setImage(UIImage(named: "detail"), for: .normal)
         
+        //Ajouter une action au bouton
+        //il faudra ajouter une fonction detail comme ceci puisque c'est un selector (@objc func detail())
+        button.addTarget(self, action: #selector(detail), for: .touchUpInside)
+        
         return button
     }
     
-    func setupCenter() -> UIView
+    func setupCenter() -> UIView?
         
     {
+        guard let anno = annotation as? MonAnnotation else {return nil}
+        
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 125, height: 125))
         
-        view.backgroundColor = .red
         
-       
+        
+        //Ajouter des contraintes pour que la view puisse apparaitre
+       view.translatesAutoresizingMaskIntoConstraints = false
+        view.widthAnchor.constraint(equalToConstant: 125).isActive = true
+        view.heightAnchor.constraint(equalToConstant: 125).isActive = true
+        
+        let imageView = UIImageView(frame: view.bounds)
+        imageView.image = anno.calanque.image
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        view.addSubview(imageView)
         
         return view
+    }
+    
+    //puisque c'est un selector il faut ajouter @objc
+    @objc func detail()
+    
+    {
+    
+    }
+    
+    //puisque c'est un selector il faut ajouter @objc
+    @objc func gps()
+        
+    {
+        
     }
 }
