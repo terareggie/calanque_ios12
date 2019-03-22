@@ -16,10 +16,12 @@ class ControllerAvecCarte: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         addAnnotations()
     }
     
+    //Mettre les annotations
     func addAnnotations()
     
     {
